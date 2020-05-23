@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Requests Which are yet to Approve or Reject" icon-name="custom:custom14"></lightning-card>
+    <template for:each={Requests} for:item="request" for:index="i">
+        <lightning-card key={abc}>
+            <p>Request Id : {request.Name} Employee Name : {request.Employee__c} Certification Name : {request.Certification__c} </p>
+            <p> Status : {request.Status__c} Voucher :  {request.Voucher__c}  Comments : {request.Comments__c}  </p>
+            <lightning-button-group>
+                <lightning-button label="Approve" value={i} variant="brand" onclick={approvereq}></lightning-button>
+                <lightning-button label="Reject" value={i} onclick={rejectreq}></lightning-button>   
+            </lightning-button-group>    
+        </lightning-card>
+    </template>
+</template>

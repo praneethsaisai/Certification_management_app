@@ -1,0 +1,47 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "baseUrl": ".",
+        "paths": {
+            "c/adminComponentOne": [
+                "adminComponentOne/adminComponentOne.js"
+            ],
+            "c/adminComponentTwo": [
+                "adminComponentTwo/adminComponentTwo.js"
+            ],
+            "c/adminComponentThree": [
+                "adminComponentThree/adminComponentThree.js"
+            ],
+            "c/appUserComponentOne": [
+                "appUserComponentOne/appUserComponentOne.js"
+            ],
+            "c/appUserComponentTwo": [
+                "appUserComponentTwo/appUserComponentTwo.js"
+            ],
+            "c/appUserComponentThree": [
+                "appUserComponentThree/appUserComponentThree.js"
+            ],
+            "c/certlookupcomponent": [
+                "certlookupcomponent/certlookupcomponent.js"
+            ],
+            "c/certrecordscomponent": [
+                "certrecordscomponent/certrecordscomponent.js"
+            ],
+            "c/certsearchcomponent": [
+                "certsearchcomponent/certsearchcomponent.js"
+            ],
+            "c/requestedRecordsComponent": [
+                "requestedRecordsComponent/requestedRecordsComponent.js"
+            ]
+        }
+    },
+    "include": [
+        "**/*",
+        "../../../../.sfdx/typings/lwc/**/*.d.ts"
+    ],
+    "typeAcquisition": {
+        "include": [
+            "jest"
+        ]
+    }
+}

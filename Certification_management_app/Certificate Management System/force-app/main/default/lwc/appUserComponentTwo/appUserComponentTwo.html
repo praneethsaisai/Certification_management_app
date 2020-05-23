@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Unsubmitted Approvals" icon-name="custom:custom14"></lightning-card>
+    <template for:each={Requests} for:item="request" for:index="i">
+        <lightning-card key={abc}>
+            <p>Employee Name : {request.Employee__c} Certification Name : {request.Certification__c} Status : {request.Status__c}</p>
+            <p>Voucher : {request.Voucher__c} Due Date :{request.Due_Date__c} Comments : {request.Comments__c} Request Id : {request.Name} </p>
+            <lightning-button-group>
+                <lightning-button label="Submit for approval" variant="brand" value={i} onclick={submitreq}></lightning-button>   
+            </lightning-button-group>
+        </lightning-card>
+    </template>
+</template>

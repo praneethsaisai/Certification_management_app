@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="Welcome to Employee Certifications App..!!!" icon-name="custom:custom14">
+        <div class="slds-m-around_medium">
+            <lightning-button label="Add New Request" onclick={reqform}></lightning-button>            
+        </div>
+    </lightning-card>
+
+    <template if:true={reqflag}>
+        <section role="dialog" tabindex="-1" aria-label="Meaningful description of the modal content" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header slds-modal__header_empty">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+                        <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                        </svg>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <p>New Request form</p>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-4">
+                    <c-certLookupComponent object-name="Employee__c" field-name="Name" label="Employee" parentidfield="Employee__c" onselect={handleAutoSelect1} iconname="standard:contact"></c-certLookupComponent>
+                    <c-certLookupComponent object-name="Certification__c" field-name="Name" label="Certification" parentidfield="Certification__c" onselect={handleAutoSelect} iconname="standard:drafts"></c-certLookupComponent>
+                    <lightning-input label="Request Due Date" value={ReqDueDate} type="date" required onchange={ReqDueDateChange}></lightning-input>
+                    <lightning-input label="Request Comments" value={ReqComm} type="Text" onchange={ReqCommChange}></lightning-input>
+                </div>
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_brand" onclick={addreq}>Add</button>
+                    <button class="slds-button slds-button_neutral" onclick={closepopup}>Cancel</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

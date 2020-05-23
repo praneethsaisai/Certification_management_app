@@ -1,0 +1,37 @@
+<template>
+    <lightning-tabset>
+        <lightning-tab label="Approved Requests">
+            <lightning-card title="Successfully Approved Requests" icon-name="custom:custom14"></lightning-card>
+            <template for:each={Requests} for:item="request" for:index="i">
+                <lightning-card key={abc}>
+                    <p>&nbsp;&nbsp;Request Id : {request.Name}</p>
+                    <p>&nbsp;&nbsp;Employee Name : {request.Employee__r.Name} &nbsp;&nbsp;&nbsp;&nbsp; Certification Name : {request.Certification__r.Name}</p>
+                    <p>&nbsp;&nbsp;Status : {request.Status__c} &nbsp;&nbsp;&nbsp;&nbsp; Voucher :  {request.Voucher__c}</p>
+                    <p>&nbsp;&nbsp;Comments : {request.Comments__c}</p>
+                </lightning-card>
+            </template>
+        </lightning-tab>
+        <lightning-tab label="Rejected Requests">
+            <lightning-card title="Unsuccessfull Approvals" icon-name="custom:custom14"></lightning-card>
+            <template for:each={Requests1} for:item="request1" for:index="i">
+                <lightning-card key={abc1}>
+                    <p>&nbsp;&nbsp;Request Id : {request1.Name}</p> 
+                    <p>&nbsp;&nbsp;Employee Name : {request1.Employee__r} &nbsp;&nbsp;&nbsp;&nbsp; Certification Name : {request1.Certification__r}</p>
+                    <p>&nbsp;&nbsp;Status : {request1.Status__c} &nbsp;&nbsp;&nbsp;&nbsp; Voucher :  {request1.Voucher__c}</p>
+                    <p>&nbsp;&nbsp;Comments : {request1.Comments__c} </p>
+                </lightning-card>
+            </template>
+        </lightning-tab>
+        <lightning-tab label="Voucher Assigned Requests">
+            <lightning-card title="Voucher Assigned Approvals" icon-name="custom:custom14"></lightning-card>
+            <template for:each={Requests2} for:item="request1" for:index="i">
+                <lightning-card key={abc2}>
+                    <p>&nbsp;&nbsp;Request Id : {request1.Name}</p>
+                    <p>&nbsp;&nbsp;Employee Name : {request1.Employee__r.Name} &nbsp;&nbsp;&nbsp;&nbsp; Certification Name : {request1.Certification__r.Name}</p>
+                    <p>&nbsp;&nbsp;Status : {request1.Status__c} &nbsp;&nbsp;&nbsp;&nbsp; Voucher :  {request1.Voucher__c}</p>
+                    <p>&nbsp;&nbsp;Comments : {request1.Comments__c}</p>               
+                </lightning-card>
+            </template>
+        </lightning-tab>
+    </lightning-tabset>
+</template>

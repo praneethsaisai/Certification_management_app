@@ -1,0 +1,35 @@
+<template>
+    <lightning-tabset>
+        <lightning-tab label="Assigned Requests">
+            <lightning-card title="Requests Which are Yet to Update Exam Status" icon-name="custom:custom14"></lightning-card>
+            <template for:each={Requests} for:item="request" for:index="i">
+                <lightning-card key={abc}>
+                    <p>Request Id : {request.Name} Employee Name : {request.Employee__c} Certification Name : {request.Certification__c} </p>
+                    <p> Status : {request.Status__c} Voucher :  {request.Voucher__c}  Comments : {request.Comments__c}  </p>
+                    <lightning-button-group>
+                        <lightning-button label="Passed" value={i} variant="brand" onclick={passedreq}></lightning-button>
+                        <lightning-button label="Failed" value={i} onclick={failedreq}></lightning-button>
+                    </lightning-button-group>
+                </lightning-card>
+            </template>
+        </lightning-tab>
+        <lightning-tab label="Passed Requests">
+            <lightning-card title="Requests Which are Approved" icon-name="custom:custom14"></lightning-card>
+            <template for:each={Requests1} for:item="request1" for:index="i">
+                <lightning-card key={abc1}>
+                    <p>Request Id : {request1.Name} Employee Name : {request1.Employee__c} Certification Name : {request1.Certification__c} </p>
+                    <p> Status : {request1.Status__c} Voucher :  {request1.Voucher__c}  Comments : {request1.Comments__c}  </p>
+                </lightning-card>
+            </template>
+        </lightning-tab>
+        <lightning-tab label="Failed Requests">
+            <lightning-card title="Requests Which are not Approved" icon-name="custom:custom14"></lightning-card>
+            <template for:each={Requests2} for:item="request1" for:index="i">
+                <lightning-card key={abc2}>
+                    <p>Request Id : {request1.Name} Employee Name : {request1.Employee__c} Certification Name : {request1.Certification__c} </p>
+                    <p> Status : {request1.Status__c} Voucher :  {request1.Voucher__c}  Comments : {request1.Comments__c}  </p>
+                </lightning-card>
+            </template>
+        </lightning-tab>
+    </lightning-tabset>
+</template>
